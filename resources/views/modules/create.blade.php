@@ -1,24 +1,33 @@
-<div>
-    <h1>Ajouter un module</h1>
-
-    <form action="{{ route('modules.store') }}" method="POST">
-        @csrf
-
-        <div>
-            <label for="name">Nom du module</label>
-            <input type="text" name="name" id="name">
-        </div>
-
-        <div>
-            <label for="installation_date">Date d'installation :</label>
-            <input type="date" name="installation_date" id="installation_date">
-        </div>
-        <div>
-            <label for="details">Détails :</label>
-            <textarea name="details" id="details" rows="4"></textarea>
-        </div>
-        <button type="submit">Enregistrer</button>
-    </form>
+@extends('layout')
 
 
-</div>
+@section('content')
+    <h1 class="text-center my-5">Ajouter un module</h1>
+    <div class="container w-50 my-5 p-5 bg-body-tertiary rounded text-white" data-bs-theme="dark">
+
+
+        <form action="{{ route('modules.store') }}" method="POST" class="row g-3 px-5">
+            @csrf
+
+            <div class="col-md-6">
+                <label for="name" class="form-label">Nom du module</label>
+                <input type="text" class="form-control" name="name" id="name" placeholder="Entrez le nom du module"
+                    required>
+            </div>
+
+            <div class="col-md-6">
+                <label for="installation_date" class="form-label">Date d'installation :</label>
+                <input type="date" class="form-control" name="installation_date" id="installation_date" required>
+            </div>
+
+            <div class="col-12">
+                <label for="details" class="form-label">Détails :</label>
+                <textarea class="form-control" name="details" id="details" rows="4" placeholder="Décrivez le module"></textarea>
+            </div>
+
+            <div class="col-12 d-flex justify-content-end">
+                <button type="submit" class="btn btn-success">Ajouter</button>
+            </div>
+        </form>
+    </div>
+@endSection

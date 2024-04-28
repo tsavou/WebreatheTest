@@ -1,3 +1,8 @@
+@extends('layout')
+
+
+@section('content')
+
 <div>
 
     <h1>{{ $module->name }}</h1>
@@ -6,3 +11,6 @@
 
     <p>Date d'installation : {{ $module->installation_date }}</p>
 </div>
+
+
+@endSection
