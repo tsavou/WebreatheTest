@@ -17,6 +17,8 @@ return new class extends Migration
             $table->date('installation_date');
             $table->text('details');
             $table->boolean('status')->default(true);
+            $table->string('type_mesure');
+
             $table->timestamps();
 
 

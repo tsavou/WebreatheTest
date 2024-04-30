@@ -9,13 +9,19 @@
         <form action="{{ route('modules.store') }}" method="POST" class="row g-3 px-5">
             @csrf
 
-            <div class="col-md-6">
+            <div class="col-md-4">
                 <label for="name" class="form-label">Nom du module</label>
                 <input type="text" class="form-control" name="name" id="name" placeholder="Entrez le nom du module"
                     required>
             </div>
 
-            <div class="col-md-6">
+            <div class="col-md-4">
+                <label for="type_mesure" class="form-label">Nom du module</label>
+                <input type="text" class="form-control" name="type_mesure" id="type_mesure" placeholder="Que mesurez-vous ?"
+                    required>
+            </div>
+
+            <div class="col-md-4">
                 <label for="installation_date" class="form-label">Date d'installation :</label>
                 <input type="date" class="form-control" name="installation_date" id="installation_date" required>
             </div>

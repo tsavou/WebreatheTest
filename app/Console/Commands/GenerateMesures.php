@@ -50,7 +50,6 @@ class GenerateMesures extends Command
                 'module_id' => $module->id,
                 'valeur_mesuree' => $mesureValue,
                 'date_mesure' => now(),
-                'type_mesure' => 'quantité',
 
             ]);
 

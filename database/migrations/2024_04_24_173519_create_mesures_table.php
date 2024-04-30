@@ -13,7 +13,6 @@ return new class extends Migration
     {
         Schema::create('mesures', function (Blueprint $table) {
             $table->id();
-            $table->string('type_mesure');
             $table->unsignedBigInteger('module_id');
             $table->decimal('valeur_mesuree', 10, 2);
             $table->dateTime('date_mesure');

@@ -31,10 +31,21 @@ class ModuleController extends Controller
      */
     public function store(Request $request)
     {
+
+        // Validation des champs du formulaire
+        $request->validate([
+            'name' => 'required|string|max:50',
+            'details' => 'required',
+            'installation_date' => 'required|date',
+            'type_mesure' => 'required|string|max:50',
+        ]);
+
+
         $module = new Module();
         $module->name = $request->name;
         $module->details = $request->details;
         $module->installation_date = $request->installation_date;
+        $module->type_mesure = $request->type_mesure;
         $module->save();
 
         return redirect()->route('modules.index')->with('success', 'Module ajouté avec succès');
@@ -54,8 +65,12 @@ class ModuleController extends Controller
         // calcul du nb de données envoyées
         $nbMesures = $mesures->count();
 
+        // calcul la durée du statut
 
-        return view('modules.show', compact('module', 'mesures', 'nbMesures'));
+        $duration = now()->diff($module->updated_at);
+
+
+        return view('modules.show', compact('module', 'mesures', 'nbMesures', 'duration'));
     }
 
     /**
