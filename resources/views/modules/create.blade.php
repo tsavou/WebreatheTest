@@ -3,7 +3,7 @@
 
 @section('content')
     <h1 class="text-center my-5">Ajouter un module</h1>
-    <div class="container w-50 my-5 p-5 bg-body-tertiary rounded text-white" data-bs-theme="dark">
+    <div class="container my-5 p-5 bg-body-tertiary rounded text-white" data-bs-theme="dark">
 
 
         <form action="{{ route('modules.store') }}" method="POST" class="row g-3 px-5">

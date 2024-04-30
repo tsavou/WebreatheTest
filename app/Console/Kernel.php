@@ -12,7 +12,8 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule): void
     {
-        // $schedule->command('inspire')->hourly();
+        // genere les mesures automatiquement chaque 10 secondes
+        $schedule->command('app:generate-mesures')->everyTenSeconds();
     }
 
     /**

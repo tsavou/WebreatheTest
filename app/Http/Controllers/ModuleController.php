@@ -45,9 +45,17 @@ class ModuleController extends Controller
      */
     public function show(string $id)
     {
-        $module = Module::find($id);
+        // Récupère le module
+        $module = Module::findOrFail($id);
 
-        return view('modules.show')->with('module', $module);
+        // Récupere les mesures du module triées par date
+        $mesures = $module->mesures()->orderBy('date_mesure')->get();
+
+        // calcul du nb de données envoyées
+        $nbMesures = $mesures->count();
+
+
+        return view('modules.show', compact('module', 'mesures', 'nbMesures'));
     }
 
     /**
