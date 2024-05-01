@@ -41,6 +41,10 @@
                 </div>
             </div>
 
+            <div class="text-center mt-3">
+                <button class="btn btn-dark" onclick="refreshPage()">Actualiser</button>
+            </div>
+
         </div>
 
         <div class="w-75 mx-auto my-5">
@@ -73,6 +77,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
 
     <script>
+        function refreshPage() {
+            location.reload();
+        }
+
         const labels = [];
         const data = [];
 
